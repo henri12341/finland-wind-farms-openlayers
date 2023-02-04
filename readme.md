@@ -2,7 +2,7 @@
 
 The purpose of this project was plot Finland's wind farms to map.
 
-Then change into your new `my-app` directory and start a development server (available at http://localhost:5173):
+Start a development server (available at http://localhost:5173):
 
     npm install
     npm start
