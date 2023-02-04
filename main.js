@@ -7,11 +7,14 @@ import {useGeographic} from 'ol/proj.js';
 
 useGeographic();
 
-const place = [24.945831, 60.192059]; // [latitude, longitude]
-const place2 = [24.945831, 62.192059];
+const places = [[24.945831, 60.192059], [24.945831, 62.192059]] // [latitude, longitude]
 
-const point = new Point(place);
-const point2 = new Point(place2);
+for (let p in places) {
+  console.log(places[p])
+  places[p] = new Feature(new Point(places[p]))
+}
+
+console.log(places)
 
 const map = new Map({
   target: 'map',
@@ -26,7 +29,7 @@ const map = new Map({
     }),
   new VectorLayer({
     source: new VectorSource({
-      features: [new Feature(point), new Feature(point2)],
+      features: places,
     }),
     style: {
       "circle-radius": 6,
